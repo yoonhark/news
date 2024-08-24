@@ -16,8 +16,6 @@
 
 package com.harkhark.core.common.network.di
 
-import com.harkhark.core.common.network.CommonDispatchers.*
-import com.harkhark.core.common.network.Dispatcher
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tmapmobility.core.database.util
+package com.harkhark.core.database.util
 
 import androidx.room.TypeConverter
 import kotlinx.datetime.Instant

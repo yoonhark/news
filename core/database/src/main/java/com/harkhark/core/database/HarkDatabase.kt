@@ -21,7 +21,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.harkhark.core.database.dao.UserDao
 import com.harkhark.core.database.model.UserEntity
-import com.tmapmobility.core.database.util.InstantConverter
+import com.harkhark.core.database.util.InstantConverter
 
 @Database(
     entities = [

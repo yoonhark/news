@@ -7,4 +7,5 @@ data class ApplicationConfig(
     val buildType: String,
     val versionCode: Int,
     val versionName: String,
+    val apiKey:String,
 )

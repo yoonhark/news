@@ -1,1 +1,1 @@
-# cleanArchitecture
+# News App

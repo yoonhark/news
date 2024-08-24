@@ -1,6 +1,6 @@
 
 [versions]
-androidGradlePlugin = "8.3.2"
+androidGradlePlugin = "8.4.2"
 androidTools = "31.3.0"
 coreKtx = "1.12.0"
 junit = "4.13.2"
@@ -52,6 +52,9 @@ legacy-support-v4 = "1.0.0"
 mavericksRxjava2 = "2.6.1"
 appcompatVersion = "1.6.1"
 core = "1.13.0"
+navigationCommonKtx = "2.7.7"
+navigationRuntimeKtx = "2.7.7"
+lifecycleRuntimeComposeAndroid = "2.8.4"
 
 
 [libraries]
@@ -129,15 +132,20 @@ coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 coil-kt-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 retrofit-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompatVersion" }
 androidx-core = { group = "androidx.core", name = "core", version.ref = "core" }
+androidx-navigation-common-ktx = { group = "androidx.navigation", name = "navigation-common-ktx", version.ref = "navigationCommonKtx" }
+androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
+androidx-lifecycle-runtime-compose-android = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose-android", version.ref = "lifecycleRuntimeComposeAndroid" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }

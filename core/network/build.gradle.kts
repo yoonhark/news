@@ -11,10 +11,13 @@ dependencies {
     api(libs.kotlinx.datetime)
     api(project(":core:common"))
 
+    api(libs.retrofit.core)
+    api(libs.retrofit.kotlin.serialization)
+
+
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.svg)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.okhttp.logging)
-    implementation(libs.retrofit.core)
-    implementation(libs.retrofit.kotlin.serialization)
+    implementation(libs.converter.gson)
 }

@@ -10,5 +10,6 @@ class ApplicationConfigProvider @Inject constructor(): AppConfigProvider {
         buildType = BuildConfig.BUILD_TYPE,
         versionCode = BuildConfig.VERSION_CODE,
         versionName = BuildConfig.VERSION_NAME,
+        apiKey = BuildConfig.API_KEY
     )
 }

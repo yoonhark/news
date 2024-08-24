@@ -1,0 +1,9 @@
+package com.harkhark.feature.detail
+
+import androidx.compose.runtime.Composable
+
+@Composable
+fun DetailScreen(
+){
+
+}
