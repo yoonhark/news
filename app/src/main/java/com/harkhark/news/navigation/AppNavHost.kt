@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import com.harkhark.feature.detail.navigation.detailScreen
+import com.harkhark.feature.detail.navigation.navigateToDetail
 import com.harkhark.feature.home.navigation.homeScreen
 import com.harkhark.feature.home.navigation.navigateToHome
 import com.harkhark.feature.splash.navigation.SPLASH_ROUTE
@@ -33,8 +34,9 @@ fun AppNavHost(
 
         homeScreen(
             modifier = modifier,
-            onClickDetail = navController::navigateUp,
+            onClickItem = navController::navigateToDetail,
         )
+
         detailScreen(
             modifier = modifier,
         )

@@ -8,7 +8,7 @@ import javax.inject.Inject
 class GetNewsDataUseCase @Inject constructor(
     private val newsRepository: NewsRepository,
 ) {
-    suspend operator fun invoke(): Flow<List<NewsData>> {
-        return newsRepository.getNews()
+    suspend operator fun invoke(isKr:Boolean): Flow<List<NewsData>> {
+        return newsRepository.getNews(isKr)
     }
 }

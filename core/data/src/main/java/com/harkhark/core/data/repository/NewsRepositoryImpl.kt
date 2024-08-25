@@ -14,9 +14,10 @@ class NewsRepositoryImpl @Inject constructor(
     private val appConfigProvider: AppConfigProvider
 ) : NewsRepository {
 
-    override suspend fun getNews(): Flow<List<NewsData>> = flow {
+    override suspend fun getNews(isKr: Boolean): Flow<List<NewsData>> = flow {
         val apiKey = appConfigProvider.get().apiKey
-        val response = newsApi.getTopHeadlines(apiKey = apiKey)
+        val response =
+            if (isKr) newsApi.getTopHeadlines(apiKey = apiKey) else newsApi.getTopHeadlinesBySource(apiKey = apiKey)
         emit(response.articles.map { it.toNewsData() })
     }
 }

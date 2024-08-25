@@ -13,9 +13,9 @@ fun NavController.navigateToHome() = navigate(HOME_ROUTE)
 
 fun NavGraphBuilder.homeScreen(
     modifier: Modifier,
-    onClickDetail:() -> Unit
+    onClickItem:(String) -> Unit
 ) {
     composable(route = HOME_ROUTE) {
-        HomeScreen(modifier)
+        HomeScreen(modifier, onClickItem)
     }
 }

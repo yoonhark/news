@@ -25,7 +25,7 @@ protobuf {
 
 dependencies {
     implementation(project(":core:common"))
-
     implementation(libs.protobuf.kotlin.lite)
+    implementation(libs.datastore.core)
     implementation(libs.datastore.preferences)
 }

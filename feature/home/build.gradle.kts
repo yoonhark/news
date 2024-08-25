@@ -8,6 +8,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.coil.kt)
+    implementation(libs.coil.kt.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
 }
