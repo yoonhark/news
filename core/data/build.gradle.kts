@@ -6,6 +6,14 @@ plugins {
 
 android {
     namespace = "com.harkhark.core.data"
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    defaultConfig {
+        buildConfigField("String", "API_KEY", "\"0688b12abbc644ea883a2fba1a9e6960\"")
+    }
 }
 
 dependencies {

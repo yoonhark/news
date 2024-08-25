@@ -18,23 +18,10 @@ package com.harkhark.core.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import com.harkhark.core.database.dao.UserDao
-import com.harkhark.core.database.model.UserEntity
-import com.harkhark.core.database.util.InstantConverter
+import com.harkhark.core.database.dao.NewsDao
+import com.harkhark.core.database.model.NewsEntity
 
-@Database(
-    entities = [
-        UserEntity::class,
-    ],
-    version = 1,
-    autoMigrations = [
-    ],
-    exportSchema = true,
-)
-@TypeConverters(
-    InstantConverter::class,
-)
-internal abstract class HarkDatabase : RoomDatabase() {
-    abstract fun userDao(): UserDao
+@Database(entities = [NewsEntity::class], version = 1)
+abstract class NewsDatabase : RoomDatabase() {
+    abstract fun newsDao(): NewsDao
 }

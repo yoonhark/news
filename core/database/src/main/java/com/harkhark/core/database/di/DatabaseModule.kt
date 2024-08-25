@@ -18,7 +18,7 @@ package com.harkhark.core.database.di
 
 import android.content.Context
 import androidx.room.Room
-import com.harkhark.core.database.HarkDatabase
+import com.harkhark.core.database.NewsDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,9 +33,9 @@ internal object DatabaseModule {
     @Singleton
     fun providesTmapDatabase(
         @ApplicationContext context: Context,
-    ): HarkDatabase = Room.databaseBuilder(
+    ): NewsDatabase = Room.databaseBuilder(
         context,
-        HarkDatabase::class.java,
-        "harkhark-database",
+        NewsDatabase::class.java,
+        "news-database",
     ).build()
 }

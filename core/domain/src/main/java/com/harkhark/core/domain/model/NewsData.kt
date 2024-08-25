@@ -5,5 +5,6 @@ data class NewsData(
     val urlToImage: String,
     val publishedAt: String,
     val url: String,
-    var isRead: Boolean = false
+    val isKr: Boolean,
+    var isRead: Boolean = false,
 )

@@ -43,7 +43,15 @@ fun HomeScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val isKr by viewModel.isKr.collectAsState()
-    HomeScreenView(isKr, uiState, viewModel::setNewsSource, onClickItem)
+
+    HomeScreenView(
+        isKr = isKr,
+        state = uiState,
+        onToggle = viewModel::setNewsSource,
+        onClickItem = {
+            viewModel.markAsRead(it)
+            onClickItem(it.url)
+        })
 }
 
 @Composable
@@ -51,7 +59,7 @@ private fun HomeScreenView(
     isKr: Boolean,
     state: NewsUiState,
     onToggle: (Boolean) -> Unit = {},
-    onClickItem: (String) -> Unit = {}
+    onClickItem: (NewsData) -> Unit = {}
 ) {
     val configuration = LocalConfiguration.current
     val gridColumns = if (configuration.screenWidthDp > 600) 3 else 1
@@ -67,14 +75,16 @@ private fun HomeScreenView(
                 }
 
                 is NewsUiState.Success -> {
-                    val newsList = state.news
+                    val newsList = state.news.filter { it.isKr == isKr }
 
                     LazyVerticalGrid(
                         columns = GridCells.Fixed(gridColumns),
                         modifier = Modifier.fillMaxSize()
                     ) {
                         items(newsList) { news ->
-                            NewsItem(news = news, onClickItem)
+                            NewsItem(news = news, onClickItem = {
+                                onClickItem(news)
+                            })
                         }
                     }
                 }
@@ -120,12 +130,12 @@ private fun SourceRadioView(isKr: Boolean, onToggle: (Boolean) -> Unit) {
 }
 
 @Composable
-private fun NewsItem(news: NewsData, onClickItem: (String) -> Unit) {
+private fun NewsItem(news: NewsData, onClickItem: () -> Unit) {
     Box(modifier = Modifier
         .padding(8.dp)
         .clickable {
             news.isRead = true
-            onClickItem(news.url)
+            onClickItem()
         }) {
         Row {
             ThumbnailImage(url = news.urlToImage, modifier = Modifier.size(100.dp))
@@ -204,4 +214,5 @@ private val sampleNews = NewsData(
     publishedAt = "2024-08-23 9:45",
     url = "",
     isRead = false,
+    isKr = true,
 )

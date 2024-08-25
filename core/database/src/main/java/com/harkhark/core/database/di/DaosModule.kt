@@ -16,8 +16,8 @@
 
 package com.harkhark.core.database.di
 
-import com.harkhark.core.database.HarkDatabase
-import com.harkhark.core.database.dao.UserDao
+import com.harkhark.core.database.NewsDatabase
+import com.harkhark.core.database.dao.NewsDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,8 +27,8 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 internal object DaosModule {
     @Provides
-    fun providesUserDao(
-        database: HarkDatabase,
-    ): UserDao = database.userDao()
+    fun providesNewsDao(
+        database: NewsDatabase,
+    ): NewsDao = database.newsDao()
 
 }

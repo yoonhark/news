@@ -24,7 +24,6 @@ android {
             useSupportLibrary = true
         }
 
-        buildConfigField("String", "API_KEY", "\"0688b12abbc644ea883a2fba1a9e6960\"")
     }
 
     buildTypes {
