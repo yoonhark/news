@@ -7,3 +7,6 @@
 Clean Architecture, MVVM, Kotlin, Compose, 
 
 사용 라이브러리: Retrofit, Hilt, Room, Coil등
+
+#Screen shot
+![Screenshot_20240827_215901](https://github.com/user-attachments/assets/eec789ff-3f60-4605-9a3c-b19b72e6ef59)
